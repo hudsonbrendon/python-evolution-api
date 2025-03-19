@@ -192,6 +192,107 @@ proxy = ProxySettings(
 )
 ```
 
+## API Features Checklist
+
+This checklist shows the current implementation status of Evolution API features in this Python wrapper:
+
+### Information
+- [ ] GET: Get Information
+
+### Instances
+- ✅ POST: Create Instance Basic
+- [ ] GET: Fetch Instances
+- [ ] GET: Instance Connect
+- [ ] PUT: Restart Instance
+- [ ] GET: Connection State
+- [ ] DEL: Logout Instance
+- [ ] DEL: Delete Instance
+- [ ] POST: Set Presence
+
+### Webhook
+- [ ] POST: Set Webhook
+- [ ] GET: Find Webhook
+
+### Settings
+- [ ] POST: Set Settings
+- [ ] GET: Find Settings
+
+### Send Message
+- [ ] POST: Send Template
+- [ ] POST: Send Plain Text
+- [ ] POST: Send Status
+- [ ] POST: Send Media
+- [ ] POST: Send WhatsApp Audio
+- [ ] POST: Send Sticker
+- [ ] POST: Send Location
+- [ ] POST: Send Contact
+- [ ] POST: Send Reaction
+- [ ] POST: Send Poll
+- [ ] POST: Send List
+
+### Chat Controller
+- [ ] POST: Check is WhatsApp
+- [ ] PUT: Mark Message As Read
+- [ ] PUT: Archive Chat
+- [ ] DEL: Delete Message for Everyone
+- [ ] POST: Send Presence
+- [ ] POST: Fetch Profile Picture URL
+- [ ] POST: Find Contacts
+- [ ] POST: Find Messages
+- [ ] POST: Find Status Message
+- [ ] PUT: Update Message
+- [ ] GET: Find Chats
+
+### Profile Settings
+- [ ] POST: Fetch Business Profile
+- [ ] POST: Fetch Profile
+- [ ] POST: Update Profile Name
+- [ ] POST: Update Profile Status
+- [ ] PUT: Update Profile Picture
+- [ ] PUT: Remove Profile Picture
+- [ ] GET: Fetch Privacy Settings
+- [ ] PUT: Update Privacy Settings
+
+### Group Controller
+- [ ] POST: Create Group
+- [ ] PUT: Update Group Picture
+- [ ] PUT: Update Group Subject
+- [ ] PUT: Update Group Description
+- [ ] GET: Fetch Invite Code
+- [ ] GET: Accept Invite Code
+- [ ] PUT: Revoke Invite Code
+- [ ] POST: Send Group Invite
+- [ ] GET: Find Group by Invite Code
+- [ ] GET: Find Group by JID
+- [ ] GET: Fetch All Groups
+- [ ] GET: Find Group Members
+- [ ] PUT: Update Group Members
+- [ ] PUT: Update Group Setting
+- [ ] PUT: Toggle Ephemeral
+- [ ] DEL: Leave Group
+
+### Typebot
+- [ ] POST: Set Typebot
+- [ ] POST: Start Typebot
+- [ ] GET: Find Typebot
+- [ ] POST: Change Typebot Status
+
+### Chatwoot
+- [ ] POST: Set Chatwoot
+- [ ] GET: Find Chatwoot
+
+### SQS
+- [ ] POST: Set SQS
+- [ ] GET: Find SQS
+
+### RabbitMQ
+- [ ] POST: Set RabbitMQ
+- [ ] GET: Find RabbitMQ
+
+### WebSocket
+- [ ] GET: Find WebSocket
+- [ ] POST: Set WebSocket
+
 ## Resources
 
 - [Evolution API Documentation](https://doc.evolution-api.com)
