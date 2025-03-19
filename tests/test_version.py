@@ -1,4 +1,4 @@
-from python_evolution_api import __version__
+from evolutionapi import __version__
 
 
 def test_version() -> None:
