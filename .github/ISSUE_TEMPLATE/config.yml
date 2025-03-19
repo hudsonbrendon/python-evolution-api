@@ -1,0 +1,10 @@
+
+blank_issues_enabled: false
+contact_links:
+  - name: Discussions
+    url: {{cookiecutter.project_github_url}}/discussions
+    about: For questions, ideas, or general discussion about the package, please use GitHub Discussions.
+  - name: Documentation
+    url: {{cookiecutter.project_github_url}}#documentation
+    about: Check the documentation first to see if your question is already answered.
+

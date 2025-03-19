@@ -1,0 +1,31 @@
+[project]
+name = "python_evolution_api"
+version = "0.1.0"
+description = "A wrapper python for Evolution API"
+authors = [
+    {name = "Hudson Brendon", email = "contato.hudsonbrendon@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.32.3",
+]
+[project.urls]
+"Homepage" = "https://github.com/hudsonbrendon/python-evolution-api"
+"Bug Tracker" = "https://github.com/hudsonbrendon/python-evolution-api/issues"
+
+
+[dependency-groups]
+dev = [
+    "coverage>=7.7.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.6.9",
+    "mkdocstrings[python]>=0.29.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.0.0",
+    "pytest-sugar>=1.0.0",
+    "pytest-xdist>=3.6.1",
+    "requests-mock>=1.12.1",
+    "ruff>=0.11.0",
+]
