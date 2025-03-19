@@ -32,6 +32,87 @@ print(f"Instance created: {response['instance']['instanceName']}")
 - **Proxy Support**: Connect through proxies with full authentication support
 - **Configuration Options**: Extensive customization with webhook, websocket, message handling settings
 
+## Features Checklist
+
+### Instances
+- ✅ Create Instance Basic
+- Fetch Instances
+- Instance Connect
+- Restart Instance
+- Connection State
+- Logout Instance
+- Delete Instance
+- Set Presence
+
+### Webhook
+- Set Webhook
+- Find Webhook
+
+### Settings
+- Set Settings
+- Find Settings
+
+### Send Message
+- Send Template
+- Send Plain Text
+- Send Status
+- Send Media
+- Send WhatsApp Audio
+- Send Sticker
+- Send Location
+- Send Contact
+- Send Reaction
+- Send Poll
+- Send List
+
+### Chat Controller
+- Check is WhatsApp
+- Mark Message As Read
+- Archive Chat
+- Delete Message for Everyone
+- Send Presence
+- Fetch Profile Picture URL
+- Find Contacts
+- Find Messages
+- Find Status Message
+- Update Message
+- Find Chats
+
+### Profile Settings
+- Fetch Business Profile
+- Fetch Profile
+- Update Profile Name
+- Update Profile Status
+- Update Profile Picture
+- Remove Profile Picture
+- Fetch Privacy Settings
+- Update Privacy Settings
+
+### Group Controller
+- Create Group
+- Update Group Picture
+- Update Group Subject
+- Update Group Description
+- Fetch Invite Code
+- Accept Invite Code
+- Revoke Invite Code
+- Send Group Invite
+- Find Group by Invite Code
+- Find Group by JID
+- Fetch All Groups
+- Find Group Members
+- Update Group Members
+- Update Group Setting
+- Toggle Ephemeral
+- Leave Group
+
+### Integrations
+- Typebot
+- Chatwoot
+- SQS
+- RabbitMQ
+- WebSocket
+
 ## Development Setup
 
 We use [uv](https://github.com/astral-sh/uv) for dependency management and virtual environments.
