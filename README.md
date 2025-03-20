@@ -36,7 +36,7 @@ print(f"Instance created: {response['instance']['instanceName']}")
 
 ### Instances
 - ✅ Create Instance Basic
-- Fetch Instances
+- ✅ Fetch Instances
 - Instance Connect
 - Restart Instance
 - Connection State
