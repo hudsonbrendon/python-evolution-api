@@ -201,7 +201,7 @@ This checklist shows the current implementation status of Evolution API features
 
 ### Instances
 - ✅ POST: Create Instance Basic
-- [ ] GET: Fetch Instances
+- ✅ GET: Fetch Instances
 - [ ] GET: Instance Connect
 - [ ] PUT: Restart Instance
 - [ ] GET: Connection State

@@ -5,7 +5,7 @@ from evolutionapi.resources.instances import Instance
 from evolutionapi.schemas import ProxySettings
 
 
-class TestInstance:
+class TestCreateInstance:
     def test_create_instance_minimal(
         self, mock_client, instance_success_response
     ) -> None:
@@ -170,3 +170,73 @@ class TestInstance:
         called_args = mock_client._post.call_args[1]["json"]
         assert "proxy" in called_args
         assert called_args["proxy"] == proxy
+
+
+class TestFetchInstance:
+    def test_fetch_instance_success(self, mock_client) -> None:
+        instance_response = [
+            {
+                "instance": {
+                    "instanceName": "example-name",
+                    "instanceId": "421a4121-a3d9-40cc-a8db-c3a1df353126",
+                    "owner": "553198296801@s.whatsapp.net",
+                    "profileName": "Guilherme Gomes",
+                    "profilePictureUrl": None,
+                    "profileStatus": "This is the profile status.",
+                    "status": "open",
+                    "serverUrl": "https://example.evolution-api.com",
+                    "apikey": "B3844804-481D-47A4-B69C-F14B4206EB56",
+                    "integration": {
+                        "integration": "WHATSAPP-BAILEYS",
+                        "webhook_wa_business": "https://example.evolution-api.com/webhook/whatsapp/db5e11d3-ded5-4d91-b3fb-48272688f206",
+                    },
+                }
+            },
+            {
+                "instance": {
+                    "instanceName": "teste-docs",
+                    "instanceId": "af6c5b7c-ee27-4f94-9ea8-192393746ddd",
+                    "status": "close",
+                    "serverUrl": "https://example.evolution-api.com",
+                    "apikey": "123456",
+                    "integration": {
+                        "token": "123456",
+                        "webhook_wa_business": "https://example.evolution-api.com/webhook/whatsapp/teste-docs",
+                    },
+                }
+            },
+        ]
+        mock_client._get.return_value = instance_response
+        instance = Instance(mock_client)
+
+        result = instance.fetch(instance_name="teste-docs")
+
+        mock_client._get.assert_called_once_with(
+            "/instance/fetchInstances", params={"instanceName": "teste-docs"}
+        )
+        assert result == instance_response
+
+    def test_fetch_instance_error(self, mock_client) -> None:
+        error_response = {"status": 404, "message": "Instance not found"}
+        mock_client._get.side_effect = EvolutionAPIError(
+            status_code=404, error_message="Not Found", response=error_response
+        )
+        instance = Instance(mock_client)
+
+        with pytest.raises(EvolutionAPIError) as excinfo:
+            instance.fetch(instance_name="non-existent-instance")
+
+        assert excinfo.value.status_code == 404
+        mock_client._get.assert_called_once_with(
+            "/instance/fetchInstances", params={"instanceName": "non-existent-instance"}
+        )
+
+    def test_fetch_instance_network_error(self, mock_client) -> None:
+        mock_client._get.side_effect = Exception("Network error")
+        instance = Instance(mock_client)
+
+        with pytest.raises(Exception) as excinfo:
+            instance.fetch(instance_name="teste-docs")
+
+        assert "Network error" in str(excinfo.value)
+        mock_client._get.assert_called_once()

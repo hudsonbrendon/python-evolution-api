@@ -141,3 +141,20 @@ class Instance:
         clean_data = {k: v for k, v in data.items() if v is not None}
 
         return self.client._post("/instance/create", json=clean_data)
+
+    def fetch(self, instance_name: str) -> Dict[str, Any]:
+        """
+        Fetch instance information by ID.
+
+        Args:
+            instance_name: The name of the instance to fetch
+
+        Returns:
+            Dictionary containing instance information.
+
+        Raises:
+            EvolutionAPIError: If the API returns an error
+        """
+        return self.client._get(
+            "/instance/fetchInstances", params={"instanceName": instance_name}
+        )
